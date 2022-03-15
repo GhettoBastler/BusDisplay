@@ -29,9 +29,9 @@ Connect to the Raspberry Pi using SSH
 ```
 ssh pi@busdisplay
 ```
-When asked, enter the the password you 
+When asked, enter the the password you chose when making the image.
 
-Update the system and install git and pip
+Next, update the system and install git and pip
 ```
 sudo apt-get update
 sudo apt-get install git pip
@@ -43,7 +43,7 @@ git clone https://github.com/GhettoBastler/BusDisplay.git
 sudo pip install -r BusDisplay/requirements.txt
 ```
 
-Create a service and enable it to run the program at startup
+Copy the service file and enable it to run the program at startup
 
 *Note: the service file contains the full path to main.py. If you are not using the default username (pi) and/or if you cloned the repository into another location, change the content of BusDisplay.service accordingly.*
 ```
@@ -59,13 +59,13 @@ sudo reboot
 If everything went right, every LED of the display should flash once during start up. After that, pressing the button will fetch data for the *METTIS A* line at *République* station.
 
 ### Configuration
-To configure change the bus line and stop, you need LE MET's internal number for your station and line.
+To use another bus line/stop, you need LE MET's internal number for your station and line.
 
-Go to <https://services.lemet.fr/> and search for the bus line on the left pannel
+Go to <https://services.lemet.fr/> and search for your bus line on the left pannel
 
 ![LE MET Screenshot 1](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_1.png)
 
-Click on your stop in the timetable. You will be redirected to another page.
+Next, click on your stop in the timetable. You will be redirected to another page.
 
 ![LE MET Screenshot 2](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_2.png)
 
