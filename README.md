@@ -2,7 +2,7 @@
 
 A thing that tells you when the next buses are.
 
-[IMAGE]
+![picture of the device](https://github.com/GhettoBastler/BusDisplay/raw/main/images/photo.jpg)
 
 When the button is pressed, it fetches data from [Metz bus network website](https://www.lemet.fr/) and displays the next two arrivals for a particular line at a given stop.
 Four seven-segment displays and two LEDs, mounted on a custom PCB, are controlled by the GPIO of a Raspberry Pi Zero 2 W.
@@ -15,11 +15,11 @@ To turn the device off, press the button for three seconds. Once the LED of the 
 
 ## Software setup
 ### Setting up the Raspberry Pi
-Use Raspberry Pi Imager to create a Raspberry Pi OS Lite (64-bit) on a MicroSD card. Before writing the image, go to the Advanced Settings and change the following settings :
+Use Raspberry Pi Imager to create a Raspberry Pi OS Lite (64-bit) on a MicroSD card. Before writing the image, go to the **Advanced options** and change the following settings :
 - Change the hostname to **busdisplay**.
 - Check **Enable SSH**. You can leave the option to use password authentication checked.
 - Leave the default username as **pi** and choose a password.
-- Check **Configure wifi** and type in your SSID and wifi password. Change the country to France
+- Check **Configure wifi** and type in your SSID and wifi password. Change the country to FR.
 - Check **Set locale settings** and change the time zone to Europe/Paris
 
 Write the image on the SD card, then insert the card into the Raspberry Pi and power it on.
@@ -29,9 +29,9 @@ Connect to the Raspberry Pi using SSH
 ```
 ssh pi@busdisplay
 ```
-When asked, enter the the password you 
+When asked, enter the the password you chose when making the image.
 
-Update the system and install git and pip
+Next, update the system and install git and pip
 ```
 sudo apt-get update
 sudo apt-get install git pip
@@ -43,7 +43,7 @@ git clone https://github.com/GhettoBastler/BusDisplay.git
 sudo pip install -r BusDisplay/requirements.txt
 ```
 
-Create a service and enable it to run the program at startup
+Copy the service file and enable it to run the program at startup
 
 *Note: the service file contains the full path to main.py. If you are not using the default username (pi) and/or if you cloned the repository into another location, change the content of BusDisplay.service accordingly.*
 ```
@@ -59,22 +59,21 @@ sudo reboot
 If everything went right, every LED of the display should flash once during start up. After that, pressing the button will fetch data for the *METTIS A* line at *République* station.
 
 ### Configuration
-To configure change the bus line and stop, you need LE MET's internal number for your station and line.
+To use another bus line/stop, you need LE MET's internal number for your station and line.
 
-Go to <https://services.lemet.fr/> and search for the bus line on the left pannel
+Go to <https://services.lemet.fr/> and search for your bus line on the left pannel
 
 ![LE MET Screenshot 1](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_1.png)
 
-Click on your stop in the timetable. You will be redirected to another page.
+Next, click on your stop in the timetable. You will be redirected to another page.
 
 ![LE MET Screenshot 2](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_2.png)
 
-The required values appear in the URL :
+Connect to the Raspberry Pi using SSH and edit the file ```config.py```. Change the values for the ones that appears in the URL
 
 ![LE MET Screenshot 3](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_3.png)
-
-Edit ```config.py``` and change the values for the ones that appears in the URL
 ```
+ssh pi@busdisplay
 nano BusDisplay/config.py
 ```
 
@@ -94,7 +93,7 @@ Other components used for the circuits include:
 - A 2x20 connector with a ribbon cable for connecting the board to the Raspberry Pi
 
 ### Enclosure
-The enclosure is designed to be laser cut. The material should be 5mm thick. All the parts are held in place by M2.5 bolts.
+The enclosure is designed to be laser cut. The material should be 5mm thick. The assembly requires 9 M2.5x15 bolts.
 
 ## License
 This project is licensed under the terms of the GNU GPLv3 license.
