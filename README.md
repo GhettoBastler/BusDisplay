@@ -2,7 +2,7 @@
 
 A thing that tells you when the next buses are.
 
-![pictire of the device](https://github.com/GhettoBastler/BusDisplay/raw/main/images/photo.jpg)
+![picture of the device](https://github.com/GhettoBastler/BusDisplay/raw/main/images/photo.jpg)
 
 When the button is pressed, it fetches data from [Metz bus network website](https://www.lemet.fr/) and displays the next two arrivals for a particular line at a given stop.
 Four seven-segment displays and two LEDs, mounted on a custom PCB, are controlled by the GPIO of a Raspberry Pi Zero 2 W.
