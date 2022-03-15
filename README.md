@@ -19,7 +19,7 @@ Use Raspberry Pi Imager to create a Raspberry Pi OS Lite (64-bit) on a MicroSD c
 - Change the hostname to **busdisplay**.
 - Check **Enable SSH**. You can leave the option to use password authentication checked.
 - Leave the default username as **pi** and choose a password.
-- Check **Configure wifi** and type in your SSID and wifi password. Change the country to France
+- Check **Configure wifi** and type in your SSID and wifi password. Change the country to FR.
 - Check **Set locale settings** and change the time zone to Europe/Paris
 
 Write the image on the SD card, then insert the card into the Raspberry Pi and power it on.
@@ -73,8 +73,9 @@ The required values appear in the URL :
 
 ![LE MET Screenshot 3](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_3.png)
 
-Edit ```config.py``` and change the values for the ones that appears in the URL
+Connect to the Raspberry Pi using SSH and edit the file ```config.py```. Change the values for the ones that appears in the URL
 ```
+ssh pi@busdisplay
 nano BusDisplay/config.py
 ```
 
