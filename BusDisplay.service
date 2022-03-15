@@ -1,0 +1,9 @@
+[Unit]
+Description=Bus Display
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+ExecStart=python /home/pi/BusDisplay/src/main.py
+
+[Install]
+WantedBy=default.target
