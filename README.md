@@ -2,7 +2,7 @@
 
 A thing that tells you when the next buses are.
 
-[IMAGE]
+![pictire of the device](https://github.com/GhettoBastler/BusDisplay/raw/main/images/photo.jpg)
 
 When the button is pressed, it fetches data from [Metz bus network website](https://www.lemet.fr/) and displays the next two arrivals for a particular line at a given stop.
 Four seven-segment displays and two LEDs, mounted on a custom PCB, are controlled by the GPIO of a Raspberry Pi Zero 2 W.
@@ -15,7 +15,7 @@ To turn the device off, press the button for three seconds. Once the LED of the 
 
 ## Software setup
 ### Setting up the Raspberry Pi
-Use Raspberry Pi Imager to create a Raspberry Pi OS Lite (64-bit) on a MicroSD card. Before writing the image, go to the Advanced Settings and change the following settings :
+Use Raspberry Pi Imager to create a Raspberry Pi OS Lite (64-bit) on a MicroSD card. Before writing the image, go to the **Advanced options** and change the following settings :
 - Change the hostname to **busdisplay**.
 - Check **Enable SSH**. You can leave the option to use password authentication checked.
 - Leave the default username as **pi** and choose a password.
@@ -69,11 +69,9 @@ Next, click on your stop in the timetable. You will be redirected to another pag
 
 ![LE MET Screenshot 2](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_2.png)
 
-The required values appear in the URL :
+Connect to the Raspberry Pi using SSH and edit the file ```config.py```. Change the values for the ones that appears in the URL
 
 ![LE MET Screenshot 3](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_3.png)
-
-Connect to the Raspberry Pi using SSH and edit the file ```config.py```. Change the values for the ones that appears in the URL
 ```
 ssh pi@busdisplay
 nano BusDisplay/config.py
@@ -95,7 +93,7 @@ Other components used for the circuits include:
 - A 2x20 connector with a ribbon cable for connecting the board to the Raspberry Pi
 
 ### Enclosure
-The enclosure is designed to be laser cut. The material should be 5mm thick. All the parts are held in place by M2.5 bolts.
+The enclosure is designed to be laser cut. The material should be 5mm thick. The assembly requires 9 M2.5x15 bolts.
 
 ## License
 This project is licensed under the terms of the GNU GPLv3 license.
