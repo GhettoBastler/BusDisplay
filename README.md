@@ -12,7 +12,7 @@ The code is written in Python 3 and uses the requests and lxml library to scrape
 ![demo animation](https://github.com/GhettoBastler/BusDisplay/raw/main/images/demo.gif)
 
 Press the button to fetch data. An animation is displayed while the device is waiting for the website to respond.
-The number of minutes for the next two buses are displayed on the front. A LED below each number indicates if it is "on-demand" service.
+The number of minutes for the next two buses are displayed on the front. A LED below each number indicates if the bus is "on-demand".
 To turn the device off, press the button for three seconds. Once the LED of the Raspberry Pi turns off, you can safely unplug the device.
 
 ## Software setup
