@@ -6,7 +6,7 @@ A thing that tells you when the next buses are.
 
 When the button is pressed, it fetches data from [Metz bus network website](https://www.lemet.fr/) and displays the next two arrivals for a particular line at a given stop.
 Four seven-segment displays and two LEDs, mounted on a custom PCB, are controlled by the GPIO of a Raspberry Pi Zero 2 W.
-The code is written in Python 3 and uses the requests and lxml library to scrape the data.
+The code is written in Python 3 and uses the [Requests](https://docs.python-requests.org/en/latest/) and [lxml](https://lxml.de/) libraries to scrape the data.
 
 ## Usage
 ![demo animation](https://github.com/GhettoBastler/BusDisplay/raw/main/images/demo.gif)
