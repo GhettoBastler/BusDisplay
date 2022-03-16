@@ -68,7 +68,6 @@ Go to <https://services.lemet.fr/> and search for your bus line on the left pann
 ![LE MET Screenshot 1](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_1.png)
 
 Next, click on your stop in the timetable. You will be redirected to another page.
-
 ![LE MET Screenshot 2](https://github.com/GhettoBastler/BusDisplay/raw/main/images/lemet_screen_2.png)
 
 Connect to the Raspberry Pi using SSH and edit the file ```config.py```. Change the values for the ones that appears in the URL
@@ -88,6 +87,8 @@ sudo systemctl restart BusDisplay
 ### Electronics
 This project uses four SUNLED XDMR20A-1 seven-segment displays I scavenged from an old appliance. **These may be hard to source, so I would advise redesigning the PCB and front panel for the parts you can find using the included schematics and SVG files.**
 
+![picture of the PCB](https://github.com/GhettoBastler/BusDisplay/raw/main/images/pcb.jpg)
+
 Other components used for the circuits include:
 - 9 100 ohm resistors
 - 2 yellow LEDs
@@ -95,7 +96,9 @@ Other components used for the circuits include:
 - A 2x20 connector with a ribbon cable for connecting the board to the Raspberry Pi
 
 ### Enclosure
-The enclosure is designed to be laser cut. The material should be 5mm thick. The assembly requires 9 M2.5x15 bolts.
+The laser cut enclosure should be made from a 5mm thick material. The assembly requires 9 M2.5x15 bolts. Spacers for the Pi and the PCB are also laser cut.
+
+![picture of the PCB (spacers not pictured)](https://github.com/GhettoBastler/BusDisplay/raw/main/images/enclosure.jpg)
 
 ## License
 This project is licensed under the terms of the GNU GPLv3 license.
