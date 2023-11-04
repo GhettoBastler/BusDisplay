@@ -1,6 +1,6 @@
-certifi~>2022.12.07
+certifi
 charset-normalizer==2.0.12
 idna==3.3
 lxml>=4.9.1
 requests==2.27.1
-urllib3==1.26.8
+urllib3
